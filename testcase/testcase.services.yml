@@ -1,0 +1,4 @@
+services:
+  testcase.entity_name_retriever:
+    class: Drupal\testcase\EntityNameRetriever
+    arguments: ['@current_route_match']
