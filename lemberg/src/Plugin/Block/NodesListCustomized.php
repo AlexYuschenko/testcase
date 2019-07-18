@@ -22,14 +22,14 @@ class NodesListCustomized extends BlockBase implements ContainerFactoryPluginInt
   /**
    * The entity type manager.
    *
-   * @var \Drupal\Core\Entity\EntityTypeManager.
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
   /**
    * The renderer.
    *
-   * @var \Drupal\Core\Render\Renderer.
+   * @var \Drupal\Core\Render\RendererInterface
    */
   protected $renderer;
 

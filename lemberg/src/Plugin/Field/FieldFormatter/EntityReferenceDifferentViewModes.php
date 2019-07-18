@@ -12,8 +12,7 @@ use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Plugin implementation of the 'entity reference different view modes'
- * formatter.
+ * Implementation of the 'entity reference different view modes' formatter.
  *
  * @FieldFormatter(
  *   id = "entity_reference_different_view_modes",
@@ -72,9 +71,9 @@ class EntityReferenceDifferentViewModes extends EntityReferenceFormatterBase imp
    */
   public static function defaultSettings() {
     return [
-        'first_view_mode' => 'default',
-        'view_mode' => 'default',
-      ] + parent::defaultSettings();
+      'first_view_mode' => 'default',
+      'view_mode' => 'default',
+    ] + parent::defaultSettings();
   }
 
   /**

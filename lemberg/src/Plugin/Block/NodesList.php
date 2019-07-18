@@ -19,16 +19,16 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class NodesList extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * The entity type manager.
+   * The entity type manager service.
    *
-   * @var \Drupal\Core\Entity\EntityTypeManager.
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
 
   /**
    * The renderer.
    *
-   * @var \Drupal\Core\Render\Renderer.
+   * @var \Drupal\Core\Render\RendererInterface
    */
   protected $renderer;
 
