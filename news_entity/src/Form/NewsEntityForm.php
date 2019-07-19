@@ -11,7 +11,7 @@ use Drupal\Core\Session\AccountProxyInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Form controller for News entity edit forms.
+ * Form controller for News edit forms.
  *
  * @ingroup news_entity
  */
@@ -75,13 +75,13 @@ class NewsEntityForm extends ContentEntityForm {
 
     switch ($status) {
       case SAVED_NEW:
-        $this->messenger()->addMessage($this->t('Created the %label News entity.', [
+        $this->messenger()->addMessage($this->t('Created the %label News.', [
           '%label' => $entity->label(),
         ]));
         break;
 
       default:
-        $this->messenger()->addMessage($this->t('Saved the %label News entity.', [
+        $this->messenger()->addMessage($this->t('Saved the %label News.', [
           '%label' => $entity->label(),
         ]));
     }

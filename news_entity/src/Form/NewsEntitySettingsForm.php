@@ -35,7 +35,7 @@ class NewsEntitySettingsForm extends FormBase {
   }
 
   /**
-   * Defines the settings form for News entity entities.
+   * Defines the settings form for News entities.
    *
    * @param array $form
    *   An associative array containing the structure of the form.
@@ -46,7 +46,7 @@ class NewsEntitySettingsForm extends FormBase {
    *   Form definition array.
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['newsentity_settings']['#markup'] = 'Settings form for News entity entities. Manage field settings here.';
+    $form['newsentity_settings']['#markup'] = 'Settings form for News entities. Manage field settings here.';
     return $form;
   }
 

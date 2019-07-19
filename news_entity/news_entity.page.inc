@@ -4,13 +4,13 @@
  * @file
  * Contains news_entity.page.inc.
  *
- * Page callback for News entity entities.
+ * Page callback for News entities.
  */
 
 use Drupal\Core\Render\Element;
 
 /**
- * Prepares variables for News entity templates.
+ * Prepares variables for News templates.
  *
  * Default template: news_entity.html.twig.
  *

@@ -8,7 +8,7 @@ use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Access\AccessResult;
 
 /**
- * Access controller for the News entity entity.
+ * Access controller for the News entity.
  *
  * @see \Drupal\news_entity\Entity\NewsEntity.
  */
@@ -22,15 +22,15 @@ class NewsEntityAccessControlHandler extends EntityAccessControlHandler {
     switch ($operation) {
       case 'view':
         if (!$entity->isPublished()) {
-          return AccessResult::allowedIfHasPermission($account, 'view unpublished news entity entities');
+          return AccessResult::allowedIfHasPermission($account, 'view unpublished news entities');
         }
-        return AccessResult::allowedIfHasPermission($account, 'view published news entity entities');
+        return AccessResult::allowedIfHasPermission($account, 'view published news entities');
 
       case 'update':
-        return AccessResult::allowedIfHasPermission($account, 'edit news entity entities');
+        return AccessResult::allowedIfHasPermission($account, 'edit news entities');
 
       case 'delete':
-        return AccessResult::allowedIfHasPermission($account, 'delete news entity entities');
+        return AccessResult::allowedIfHasPermission($account, 'delete news entities');
     }
 
     // Unknown operation, no opinion.
@@ -41,7 +41,7 @@ class NewsEntityAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-    return AccessResult::allowedIfHasPermission($account, 'add news entity entities');
+    return AccessResult::allowedIfHasPermission($account, 'add news entities');
   }
 
 }

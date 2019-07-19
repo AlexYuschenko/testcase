@@ -1,4 +1,4 @@
-# News entity routing definition
+# News routing definition
 news_entity.settings_tab:
   route_name: news_entity.settings
   title: 'Settings'

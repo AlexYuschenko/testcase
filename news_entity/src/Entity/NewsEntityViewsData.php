@@ -5,7 +5,7 @@ namespace Drupal\news_entity\Entity;
 use Drupal\views\EntityViewsData;
 
 /**
- * Provides Views data for News entity entities.
+ * Provides Views data for News entities.
  */
 class NewsEntityViewsData extends EntityViewsData {
 

@@ -7,7 +7,7 @@ use Drupal\Core\Entity\EntityListBuilder;
 use Drupal\Core\Link;
 
 /**
- * Defines a class to build a listing of News entity entities.
+ * Defines a class to build a listing of News entities.
  *
  * @ingroup news_entity
  */
@@ -17,7 +17,7 @@ class NewsEntityListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildHeader() {
-    $header['id'] = $this->t('News entity ID');
+    $header['id'] = $this->t('News ID');
     $header['name'] = $this->t('Name');
     return $header + parent::buildHeader();
   }
