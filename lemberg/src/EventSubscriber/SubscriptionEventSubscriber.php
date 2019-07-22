@@ -4,7 +4,7 @@ namespace Drupal\lemberg\EventSubscriber;
 
 use Drupal\lemberg\Event\SubscriptionEvent;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Messenger\MessengerTrait;
+use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -17,7 +17,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class SubscriptionEventSubscriber implements EventSubscriberInterface {
 
   use StringTranslationTrait;
-  use MessengerTrait;
 
   /**
    * Role ID for subscriber users.
@@ -37,6 +36,13 @@ class SubscriptionEventSubscriber implements EventSubscriberInterface {
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
+
+  /**
+   * The messenger service.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
 
   /**
    * The role storage.
@@ -59,13 +65,16 @@ class SubscriptionEventSubscriber implements EventSubscriberInterface {
    *   The current user.
    * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
    *   The entity type manager.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger service.
    *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
-  public function __construct(AccountInterface $account, EntityTypeManagerInterface $entity_type_manager) {
+  public function __construct(AccountInterface $account, EntityTypeManagerInterface $entity_type_manager, MessengerInterface $messenger) {
     $this->account = $account;
     $this->entityTypeManager = $entity_type_manager;
+    $this->messenger = $messenger;
     $this->roleStorage = $this->entityTypeManager->getStorage('user_role');
     $this->userStorage = $this->entityTypeManager->getStorage('user');
   }
