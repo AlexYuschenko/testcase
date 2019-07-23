@@ -1,6 +1,0 @@
-name: 'Test Case'
-type: module
-description: 'Test Case module'
-core: '8.x'
-dependencies:
-  - block

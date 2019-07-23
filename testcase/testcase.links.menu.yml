@@ -1,4 +1,0 @@
-tetscase.subscription:
-  title: 'Subscribe'
-  route_name: testcase.subscription_page
-  menu_name: main
